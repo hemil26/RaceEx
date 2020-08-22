@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <div class="row">
+        <h3 style="text-align:center;">Edit info about <%=car.name%></h3>
+        <div style="width:30%; margin:25px auto;">
+            <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type='text' value="<%=car.name%>" name="car[name]">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type='number' value="<%=car.price%>" name="car[price]" min="399.00" step="1.00">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type='text' value="<%=car.image%>" name="car[image]">    
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="car[descr]"><%=car.descr%></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">Next</button>
+                </div>
+            </form>
+            <a href="/cars"> Go back</a>
+        </div>
+    </div>
+</div>
+<%- include("../partials/footer") %>

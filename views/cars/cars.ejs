@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+<div class='container'>
+    <header class='jumbotron'>
+        <h1> <i class="fas fa-flag-checkered"></i> RaceEx !</h1>
+        <hr>
+        <p>Where f1 dreams come true </p>
+        <p>
+            <a class="btn btn-primary " href="/cars/new">Add a new car</a>
+        </p>
+    </header>
+    <div class='row text-center' style="display:flex; flex-wrap:wrap;">
+        <% cars.forEach(function(car){ %>
+            <div class='col-md-3 col-sm-6 px-20'>
+                <div class='img-thumbnail'>
+                    <img class="img-responsive" src="<%=car.image%>">
+                    <div class='caption'>
+                        <h4><%=car.name%></h4>
+                    </div>
+                    <p><a href="/cars/<%=car._id%>" class="btn btn-primary">More</a></p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<%- include("../partials/footer") %>
+    
+

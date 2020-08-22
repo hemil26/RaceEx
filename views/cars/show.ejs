@@ -1,0 +1,54 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">RaceEx</p>
+            <div class="list-group">
+                <li class="list-group-item active"> Info 1</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=car.image%>">
+                <div class="caption">
+                    <h4 class="pull-right">$<%=car.price%></h4>
+                    <h3><a><%=car.name%></a></h3>
+                    <p><%=car.descr%></p>
+                    <p>
+                        <em>This was submitted by <%=car.author.username%></em>
+                    </p>
+                    <% if(currentUser && car.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-warning" href="/cars/<%=car._id%>/edit">Edit</a>
+                        <form style="display:inline;" action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+            <hr>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/cars/<%=car._id%>/comments/new">Leave a review</a>
+                </div>
+                <% car.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%=comment.author.username%></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p><%=comment.text%></p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a class="btn btn-xs btn-warning" href="/cars/<%=car._id%>/comments/<%=comment._id%>/edit">
+                                Edit
+                            </a>
+                            <form style="display:inline;" action="/cars/<%=car._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-xs btn-danger">Delete</button>
+                            </form>
+                        <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("../partials/footer") %>

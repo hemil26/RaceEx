@@ -1,0 +1,97 @@
+<html style="scroll-behavior: smooth;">
+    <head>
+        <title>RaceEx</title>
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    </head>
+    <body id="aboutus">
+        <div id="color-overlay2"></div>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a style="font-size:25px"class="navbar-brand" href="/"><i class="fas fa-flag-checkered"></i>  RaceEx!</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="/cars/new">New Cars</a></li>
+                <li><a href="/cars">Cars</a></li>
+                <li><a href="/aboutus">About us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <% if(!currentUser){ %>
+                  <li><a href="/register">Register</a></li>
+                  <li><a href="/login">Login</a></li>
+                <% }else{ %>
+                  <li><a href="#">Signed in as <%=currentUser.username%></a></li>
+                  <li><a href="/logout">Logout</a></li>  
+                <% } %>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <section>
+          <div class="container align-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="content">
+                        <h1 id="abouthead">RaceEx !</h1>
+                        <P id="aboutparah">We are copmany which will give you amazing Racing Experience as the name suggests. We will teach you a month in advance to drive the particular race car you selected and after a month you will be free like a bird and will be allowed to drive that amazing Race car driven by famous racers on some of the famous world tracks on the destination you selected so what are you waiting for Press your clutch ! Lights are green and now we are Racing!</P>
+                        <div id="arrow">
+                          <a id="anchor" href="#bottommore">
+                            <i class="fas fa-arrow-circle-down fa-4x"></i>
+                          </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section id="bottom">
+          <a id="bottommore">
+            <footer>
+              <div class="container">
+                <div class="row text-white">
+                  <div class="col-12 col-md-3">
+                    <div class="media-wrap">
+                      <img src="https://img.redbull.com/images/c_crop,x_521,y_0,h_903,w_1355/c_fill,w_180,h_120/q_auto,f_auto/redbullcom/2019/05/23/7588eee1-943a-4e0a-bcdf-f37dd0af5a53/f1-2019-red-bull">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                      <h5 style="font-size:30px;">
+                          Address
+                      </h5>
+                      <p class="mbr-text">
+                          4123  Horner Street
+                          <br>Ohio, 44221
+                      </p>
+                  </div>
+                  <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                      <h5 style="font-size:30px;">
+                          Contacts
+                      </h5>
+                      <p class="mbr-text">
+                          Email: raceex@onion.com
+                          <br>Phone: 330-906-7478
+                          <br>Fax: 420-69-420
+                      </p>
+                  </div>
+                  <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                    <img src="https://img.redbull.com/images/c_crop,x_0,y_0,h_2133,w_3200/c_fill,w_180,h_120/q_auto,f_auto/redbullcom/2020/3/24/yd4f9nasjyoqktyyfrjn/f1-movies-lead">
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </section> 
+<%- include("../partials/footer") %>

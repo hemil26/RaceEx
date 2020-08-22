@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>RaceEx</title>
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/stylesheets/home.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div id="color-overlay"></div>
+        <nav style="z-index:1; position:relative;" class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button style="background-color:white;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a style="color:black; font-size:25px;"class="navbar-brand" href="/"><i class="fas fa-flag-checkered"></i>  RaceEx!</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a style="color:black;" href="/cars/new">New Cars</a></li>
+                <li><a style="color:black;" href="/cars">Cars</a></li>
+                <li><a style="color:black;" href="/aboutus">About us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <% if(!currentUser){ %>
+                  <li><a href="/register">Register</a></li>
+                  <li><a href="/login">Login</a></li>
+                <% }else{ %>
+                  <li><a href="#">Signed in as <%=currentUser.username%></a></li>
+                  <li><a href="/logout">Logout</a></li>  
+                <% } %>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div style="z-index:1; position:relative;" class="row">
+                <div class="col-md-12">
+                    <div id="content" style="text-align:center; padding-top:18%;">
+                        <h1 style="padding-bottom:20px; font-size:50px; color:white; "><i class="fas fa-flag-checkered"></i>   RaceEx !</h1>
+                        <a href="/cars" class="btn btn-success">View all Cars</a>
+                    </div>
+                </div>
+            </div>
+            <ul class="slideshow">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+        </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
