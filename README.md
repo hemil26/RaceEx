@@ -1,5 +1,5 @@
 # RaceEx
-
+RaceEx is a website about a fictional company which offers Formula 1 fans an ultimate experience to drive a Formula 1 car, made with RESTful routing
 
 ![home page](screenshots/homepage.png)
 
