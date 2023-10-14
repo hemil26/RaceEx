@@ -52,7 +52,7 @@ app.use(authRoutes);
 app.use(commentRoutes);
 app.use(carRoutes);
     
-mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect(process.env.MONGO_URI,{useNewUrlParser:true, useUnifiedTopology:true});
 
 
 app.listen(process.env.PORT,process.env.ID,function(){

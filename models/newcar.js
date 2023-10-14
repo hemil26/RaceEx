@@ -9,15 +9,27 @@ var carSchema = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"User"
         },
-        username:String
+        username:{
+            type:String,
+            trim:true,
+            maxlength:20,
+            minlength:3
+        }
     },
-    descr:String,
+    descr:{
+        type:String,
+        trim:true,
+        maxlength:100,
+        minlength:1
+    },
     comments:[
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:"Comment"
         }
     ]
+},{
+    timestamps:true
 });
 
 module.exports = mongoose.model("Car",carSchema);
