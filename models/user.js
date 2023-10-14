@@ -3,7 +3,13 @@ var passLocalMongoose = require("passport-local-mongoose");
 
 var userSchema = new mongoose.Schema({
     username:{type:String, required:true, unique:true},
-    password:String,
+    password:{
+        type:String,
+        required:true,
+        trim:true,
+        maxlength:20,
+        minlength:3
+    },
     email: {type: String, unique: true, required: true},
     resetPasswordToken: String,
     resetPasswordExpires: Date
